@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style type="text/css">
+        .darkness{
+            background-color: black;
+            color: white;
+            font-family: Verdana;
+        }
+        .light{
+            background-color:lemonchiffon;
+            color: blue;
+            font-family:Verdana;
+        }
+        
+    </style>
+</head>
+<body >
+   
+    <div id="maincontent" class="darkness">
+         <img id="lightBulb" src="img/bulboff.gif" width="150px"><br />
+        <img id="switch" src="img/switch_off.png" width="100">
+         <div id="status">
+    </div>
+    <hr />
+    <div id="maincontent2" class="darkness">
+     <img id="lightBulb2" src="img/bulboff.gif" width="150px"><br />
+    
+        <img id="switch2" src="img/switch_off.png" width="100">
+        <div id="status2">
+    </div>
+    
+        
+    </div>
+    <script>
+    $("#switch").click(function(){
+      if($("#switch").attr("src")=="img/switch_off.png"){
+         $("#switch").attr("src","img/switch_on.png"); 
+         bulbon();
+      }  
+      else{
+          $("#switch").attr("src","img/switch_off.png");
+          bulboff();
+      }
+    });
+    $("#switch2").click(function(){
+      if($("#switch2").attr("src")=="img/switch_off.png"){
+         $("#switch2").attr("src","img/switch_on.png"); 
+         bulbon2();
+      }  
+      else{
+          $("#switch2").attr("src","img/switch_off.png");
+          bulboff2();
+      }
+    });
+    // let bulbImage= document.getElementById("lightBulb");
+    // let statusText =document.getElementById("status");
+    // let maincontent =document.getElementById("maincontent");
+     function bulbon(){
+         $("#lightBulb").attr("src","img/bulbon.gif");
+         $("#status").html("<h2>Its too bright in Room one</h2>");
+         $("#maincontent").removeClass("darkness").addClass("light");
+             }
+      function bulboff(){
+          $("#lightBulb").attr("src","img/bulboff.gif");
+         $("#status").html("<h2>Its darkness in Room one</h2>");
+         $("#maincontent").removeClass("light").addClass("darkness");
+             
+     }
+     function bulbon2(){
+         $("#lightBulb2").attr("src","img/bulbon.gif");
+         $("#status2").html("<h2>Its too bright in Room Two</h2>");
+         $("#maincontent2").removeClass("darkness").addClass("light");
+             }
+      function bulboff2(){
+          $("#lightBulb2").attr("src","img/bulboff.gif");
+         $("#status2").html("<h2>Its darkness in Room Two</h2>");
+         $("#maincontent2").removeClass("light").addClass("darkness");
+             
+     }
+     
+        // function bulbon(){
+        //     document.getElementById("lightBulb").src="img/bulbon.gif";
+        //     document.getElementById("status").innerHTML="<h2>It's too bright!!</h2>";
+            
+        // }
+        //  function bulboff(){
+        //     document.getElementById("lightBulb").src="img/bulboff.gif";
+        //      document.getElementById("status").innerHTML="<h2>It's dark!!</h2>";
+       
+        // }
+        
+    </script>
+</body>
+</html>
